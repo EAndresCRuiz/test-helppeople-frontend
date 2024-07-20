@@ -32,7 +32,14 @@ const CategoryList: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {categories.map((category) => (
+            {categories.length === 0 ? (
+              <tr>
+                <td colSpan={3} className="text-center py-4">
+                  No categories found.
+                </td>
+              </tr>
+            ) : (
+              categories.map((category) => (
               <tr key={category.id} className="hover:bg-gray-50">
                 <td className="py-2 px-4 border-b">{category.id}</td>
                 <td className="py-2 px-4 border-b">{category.name}</td>
@@ -46,7 +53,7 @@ const CategoryList: React.FC = () => {
                   <button onClick={() => handleDelete(category.id)}>Delete</button>
                 </td>
               </tr>
-            ))}
+            )))}
           </tbody>
         </table>
       </div>

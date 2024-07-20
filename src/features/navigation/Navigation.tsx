@@ -23,6 +23,15 @@ const Navigation: React.FC = () => {
         <li>
           <Link to="/checkout" className="hover:text-gray-400">Checkout</Link>
         </li>
+        <li>
+          <Link to="/upload-csv" className="hover:text-gray-400">Upload CSV</Link>
+        </li>
+        <li>
+          <Link to="/create-user" className="hover:text-gray-400">Create User</Link>
+        </li>
+        <li>
+          <Link to="/users" className="hover:text-gray-400">User List</Link>
+        </li>
       </ul>
     </nav>
   );

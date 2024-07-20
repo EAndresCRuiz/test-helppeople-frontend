@@ -9,6 +9,9 @@ import CategoryForm from './features/categories/CategoryForm';
 import CategoryList from './features/categories/CategoryList';
 import Cart from './features/cart/Cart';
 import Checkout from './features/checkout/Checkout';
+import CsvUpload from './features/users/CsvUpload';
+import UserForm from './features/users/UserForm';
+import UserList from './features/users/UserList';
 
 const App: React.FC = () => {
   return (
@@ -27,6 +30,9 @@ const App: React.FC = () => {
             <Route path="/update-category/:id" element={<CategoryForm />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/upload-csv" element={<CsvUpload />} />
+          <Route path="/create-user" element={<UserForm />} />
+          <Route path="/users" element={<UserList />} />
           </Routes>
         </div>
       </Router>
