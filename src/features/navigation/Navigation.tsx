@@ -17,6 +17,12 @@ const Navigation: React.FC = () => {
         <li>
           <Link to="/categories">Category List</Link>
         </li>
+        <li>
+          <Link to="/cart">Shopping Cart</Link>
+        </li>
+        <li>
+          <Link to="/checkout">Checkout</Link>
+        </li>
       </ul>
     </nav>
   );

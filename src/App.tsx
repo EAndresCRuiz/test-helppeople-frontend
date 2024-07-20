@@ -7,6 +7,8 @@ import ProductList from './features/products/ProductList';
 import ProductDetail from './features/products/ProductDetail';
 import CategoryForm from './features/categories/CategoryForm';
 import CategoryList from './features/categories/CategoryList';
+import Cart from './features/cart/Cart';
+import Checkout from './features/checkout/Checkout';
 
 const App: React.FC = () => {
   return (
@@ -22,6 +24,8 @@ const App: React.FC = () => {
             <Route path="/create-category" element={<CategoryForm />} />
             <Route path="/categories" element={<CategoryList />} />
             <Route path="/update-category/:id" element={<CategoryForm />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </div>
       </Router>
