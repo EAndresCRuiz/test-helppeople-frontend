@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState, AppDispatch } from '../app/store';
-import { fetchProducts } from '../features/products/productsSlice';
-import { Product } from '../types/Product';
+import { RootState, AppDispatch } from '../../app/store';
+import { fetchProducts } from '../../features/products/productsSlice';
+import { Product } from '../../types/Product';
+import Navigation from '../navigation/Navigation';
 
 const ProductList: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -14,6 +15,7 @@ const ProductList: React.FC = () => {
 
   return (
     <div>
+      <Navigation />
       <h1>Product List</h1>
       <ul>
         {products.map((product: Product) => (
