@@ -25,7 +25,7 @@ const ProductList: React.FC = () => {
       <ul>
         {products.map((product: Product) => (
           <li key={product.id}>
-            {product.name}
+            <Link to={`/products/${product.id}`}>{product.name}</Link>
             <Link to={`/update-product/${product.id}`}>Edit</Link>
             <button onClick={() => handleDelete(product.id)}>Delete</button>
           </li>
