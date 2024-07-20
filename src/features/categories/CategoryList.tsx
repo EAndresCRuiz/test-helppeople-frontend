@@ -19,18 +19,37 @@ const CategoryList: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="container mx-auto p-4">
       <Navigation />
-      <h1>Category List</h1>
-      <ul>
-        {categories.map((category: Category) => (
-          <li key={category.id}>
-            {category.name}
-            <Link to={`/update-category/${category.id}`}>Edit</Link>
-            <button onClick={() => handleDelete(category.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <h1 className="text-3xl font-bold mb-4">Category List</h1>
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white border border-gray-300">
+          <thead>
+            <tr>
+              <th className="py-2 px-4 bg-gray-100 border-b">ID</th>
+              <th className="py-2 px-4 bg-gray-100 border-b">Name</th>
+              <th className="py-2 px-4 bg-gray-100 border-b">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {categories.map((category) => (
+              <tr key={category.id} className="hover:bg-gray-50">
+                <td className="py-2 px-4 border-b">{category.id}</td>
+                <td className="py-2 px-4 border-b">{category.name}</td>
+                <td className="py-2 px-4 border-b">
+                  <Link
+                    to={`/update-category/${category.id}`}
+                    className="text-blue-500 hover:text-blue-700 mr-2"
+                  >
+                    Edit
+                  </Link>
+                  <button onClick={() => handleDelete(category.id)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

@@ -16,11 +16,16 @@ const Checkout: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="container mx-auto p-4">
       <Navigation />
-      <h1>Checkout</h1>
+      <h1 className="text-3xl font-bold mb-4">Checkout</h1>
       <p>Click the button below to complete your purchase.</p>
-      <button onClick={handleSimulatePurchase}>Complete Purchase</button>
+      <button
+        onClick={handleSimulatePurchase}
+        className="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700"
+      >
+        Complete Purchase
+      </button>
     </div>
   );
 };

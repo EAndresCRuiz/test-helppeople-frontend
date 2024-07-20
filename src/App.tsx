@@ -18,6 +18,7 @@ const App: React.FC = () => {
           <h1>Product and Category Management</h1>
           <Routes>
             <Route path="/" element={<ProductList />} />
+            <Route path="/products" element={<ProductList />} />
             <Route path="/create-product" element={<ProductForm />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/update-product/:id" element={<ProductForm />} />
