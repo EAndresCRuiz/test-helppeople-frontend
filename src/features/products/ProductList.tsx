@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../../app/store';
-import { fetchProducts } from '../../features/products/productsSlice';
+import { fetchProducts, deleteProduct } from './productsSlice';
 import { Product } from '../../types/Product';
 import Navigation from '../navigation/Navigation';
+import { Link } from 'react-router-dom';
 
 const ProductList: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -13,13 +14,21 @@ const ProductList: React.FC = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
+  const handleDelete = (id: number) => {
+    dispatch(deleteProduct(id));
+  };
+
   return (
     <div>
       <Navigation />
       <h1>Product List</h1>
       <ul>
         {products.map((product: Product) => (
-          <li key={product.id}>{product.name}</li>
+          <li key={product.id}>
+            {product.name}
+            <Link to={`/update-product/${product.id}`}>Edit</Link>
+            <button onClick={() => handleDelete(product.id)}>Delete</button>
+          </li>
         ))}
       </ul>
     </div>
